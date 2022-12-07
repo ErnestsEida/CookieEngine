@@ -48,5 +48,5 @@ int main(){
 
 Creating GameObjects on screen can be done anywhere before `engine.Run()` call
 
-## Classes
-Youy can find information about classes and their methods and functionality in [Class descriptions](includes/readme.md#class-descriptions)
+## API
+You can find examples, documentation on classes and tutorials [Here](https://ernestseida.github.io/CookieEngine/api/index.html) (keep in mind, it's early in development)
