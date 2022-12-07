@@ -1,0 +1,22 @@
+body {
+    margin-bottom: 50px;
+}
+
+.nav-item {
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.navbar {
+    box-shadow: 1px 9px 19px 1px rgba(0,0,0,0.47);
+    -webkit-box-shadow: 1px 9px 19px 1px rgba(0,0,0,0.47);
+    -moz-box-shadow: 1px 9px 19px 1px rgba(0,0,0,0.47);
+}
+
+.main {
+    margin-top: 5%;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,23 @@
+.class-info {
+    margin: 50px 0px;
+}
+
+th, td {
+    padding: 10px;
+}
+
+.overall-description > .lead {
+    margin: 50px 0px;
+}
+
+.method-name {
+    color: blue;
+}
+
+.function-parameter {
+    color: purple;
+}
+
+.link-to-deepdive {
+    text-decoration: none;
+}

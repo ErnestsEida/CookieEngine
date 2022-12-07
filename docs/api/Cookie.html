@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Cookie.cpp</title>
+    <link rel="icon" href="../images/logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="css/api-global.css">
+</head>
+<body>
+    <!-- NAVBAR START -->
+    <nav class="navbar sticky-top navbar-expand bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+            <img src="../images/logo.svg" width="64" height="64"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">API</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">EXAMPLES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">TUTORIALS</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAVBAR END -->
+    <div class="container main">
+        <div class="overall-description">
+            <h1 class="display-4"> CLASS DESCRIPTION </h1>
+            
+            <table class="table-bordered class-info">
+                <tbody>
+                    <tr>
+                        <th> Include </th>
+                        <td> #include "Cookie.cpp" </td>
+                    </tr>
+                    <tr>
+                        <th> Parent </th>
+                        <td> - </td> 
+                    </tr>
+                    <tr>
+                        <th> Descendants </th>
+                        <td> - </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="lead">
+                Cookie.cpp is the main GameEngine object that controls Scenes, Viewports, GameObjects, Flow of information.<br>
+                This class has to be initialzied as first object in your main file, considering that this object will control how your game will work, AND you 
+                can't have 2 objects of this class created at once, if at some point there will be an attempt to create second object of this class, error will be thrown
+                and program will exit.<br>
+                NOTE: Before trying to run the Engine, you have to initialize your window, otherwise error will be thrown. Scene is not mandatory. 
+            </p>
+        </div>
+
+        <hr/>
+        <div class="class-attributes">
+            <h1 class="display-4">Class attributes</h1>
+            
+            <h1 class="display-6">PRIVATE</h1>
+            <table class="table-bordered">
+                <thead>
+                    <th scope="col">Type</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="function-parameter">bool</i></td>
+                        <td> closeWindowFlag </td>
+                        <td> Default value is <b>FALSE</b>. Flag is used to determine if render window should be closed </td>
+                    </tr>
+                    <tr>
+                        <td><i class="function-parameter">bool</i></td>
+                        <td> windowInitializationFlag </td>
+                        <td> Default value is <b>FALSE</b>. Flag is used in guard clause, when trying to run engine without RenderWindow being present </td>
+                    </tr>
+                    <tr>
+                        <td><i class="function-parameter">RenderWindow*</i></td>
+                        <td> window </td>
+                        <td> Holds created or given RenderWindow, that CookieEngine will use as main display window </td>
+                    </tr>
+                    <tr>
+                        <td><i class="function-parameter"><a href="Scene.html" class="function-parameter">Scene</a>*</i></td>
+                        <td> currentScene </td>
+                        <td> Default value is <b>NULL</b>. Attribute is used to display gameobjects in given Scene object </td>
+                    </tr>
+                    <tr>
+                        <td><i class="function-parameter"><a href="Viewport.html" class="function-parameter">Viewport</a>*</i></td>
+                        <td> viewport </td>
+                        <td> Attribute is used in mainloop of engine, to update the visible part of screen </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h1 class="display-6">STATIC</h1>
+            <table class="table-bordered">
+                <thead>
+                    <th scope="col">Type</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="function-parameter">Cookie*</i></td>
+                        <td> Engine </td>
+                        <td> CookieEngine object, set during construction </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr/>
+        <div class="class-methods">
+            <h1 class="display-4"> Class methods </h1>
+
+            <h1 class="display-6"> PUBLIC </h1>
+            <table class="table-bordered">
+                <thead>
+                    <th scope="col">Return type</th>
+                    <th scope="col">Method name</th>
+                    <th scope="col">Description</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> constructor </td>
+                        <td> Cookie()</td>
+                        <td> Only constructor for this class </td>
+                    </tr>
+                    <tr>
+                        <td> RenderWindow* </td>
+                        <td> getWindow() const</td>
+                        <td> Returns pointer to Engines main display RenderWindow </td>
+                    </tr>
+                    <tr>
+                        <td> void </td>
+                        <td> setWindow(<i class="function-parameter">RenderWindow*</i> window)</td>
+                        <td> Sets Engines main display RenderWindow, from parameters, also creates a viewport with window dimensions</td>
+                    </tr>
+                    <tr>
+                        <td> void </td>
+                        <td> CreateWindow(<i class="function-parameter">unsigned int</i> width, <i class="function-parameter">unsigned int</i> height, <i class="function-parameter">string</i> title)</td>
+                        <td> Creates a new RenderWindow from given width and height, viewport is also made with given dimensions. Will use default ContextSettings </td>
+                    </tr>
+                    <tr>
+                        <td> void </td>
+                        <td> CreateWindow(<i class="function-parameter">unsigned int</i> width, <i class="function-parameter">unsigned int</i> height, <i class="function-parameter">string</i> title, <i class="function-parameter">ContextSettings</i> settings)</td>
+                        <td> Creates a new RenderWindow from given width and height, viewport is also made with given dimensions. Will use ContextSettings given in parameters </td>
+                    </tr>
+                    <tr>
+                        <td><a href="Viewport.html">Viewport</a>*</td>
+                        <td>getViewport() const</td>
+                        <td> Returns pointer to currently used viewport object</td>
+                    </tr>
+                    <tr>
+                        <td>void</td>
+                        <td>closeWindow()</td>
+                        <td>Sets <b>closeWindowFlag = true</b>, which closes the window (and finishes run() method)</td>
+                    </tr>
+                    <tr>
+                        <td>void</td>
+                        <td>LoadScene(<i><a href="Scene.html">Scene</a>*</i> scene)</td>
+                        <td>Sets up scene given in parameters as currentScene, and runs SetupScene()</td> 
+                    </tr>
+                    <tr>
+                        <td><a href="Scene.html">Scene</a>*</td>
+                        <td>getScene() const</td>
+                        <td>Returns pointer to <b>currentScene</b> attribute object</td>
+                    </tr>
+                    <tr>
+                        <td> void </td>
+                        <td> Run() </td>
+                        <td> Runs engine, and starts the game. Shows RenderWindow and scene (if present). Sets up Gametime and enters unlimited loop until <b>closeWindowFlag</b> turns true </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr/>
+        <div class="class-methods-deepdive">
+            <h1 class="display-4"> Method Deepdive </h1>
+            <div class="method-deepdive-block">
+                <h5 id="MethodName"></h5>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
